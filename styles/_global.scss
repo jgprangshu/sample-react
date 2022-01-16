@@ -1,0 +1,46 @@
+@use "sass:math";
+
+/* Primary Colors */
+$primary-color-1: #97144d;
+
+/* Responsiveness mixins */
+
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+      @content;
+    }
+  }
+  
+  @mixin for-tab-and-phone {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+  
+  // need to write in class inside
+  // @include for-phone-only {
+  
+  // }
+  @mixin for-tab-only {
+    @media (min-width: 600px) and (max-width: 1024px) {
+      @content;
+    }
+  }
+  
+  @mixin for-tab-and-web {
+    @media (min-width: 600px) {
+      @content;
+    }
+  }
+  
+  @mixin for-web-only {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+  
+  @mixin for-above-tab-below-vd {
+    @media (min-width: 1024px) and (max-width: 1280px){
+      @content;
+    }
+  }
